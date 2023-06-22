@@ -1,0 +1,138 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #1c1c1c;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #ff6f00;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff6f00, 0 0 20px #ff6f00, 0 0 30px #ff6f00;
+  }
+  to {
+    text-shadow: 0 0 20px #ff6f00, 0 0 30px #ff6f00, 0 0 40px #ff6f00;
+  }
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  perspective: 800px;
+}
+
+.player,
+.computer {
+  flex: 1;
+}
+
+.player button {
+  font-size: 24px;
+  padding: 15px 30px;
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6f00;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: shake 0.5s infinite;
+}
+
+.player button:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px) rotate(-20deg);
+  }
+  50% {
+    transform: translateX(10px) rotate(20deg);
+  }
+  75% {
+    transform: translateX(-10px) rotate(-20deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.result {
+  flex: 1;
+}
+
+.result p {
+  font-size: 36px;
+  margin-bottom: 30px;
+  animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  font-size: 24px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6f00;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff8f00;
+  cursor: pointer;
+}
+
+#message {
+  font-size: 24px;
+  color: #ff6f00;
+  animation: slide-in 0.5s;
+}
+
+#computer-choice {
+  font-size: 24px;
+  color: #ff8f00;
+  animation: slide-in 0.5s;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
